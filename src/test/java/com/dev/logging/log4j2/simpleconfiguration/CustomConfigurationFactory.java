@@ -16,7 +16,6 @@ import org.apache.logging.log4j.core.config.builder.api.*;
 import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
 import org.apache.logging.log4j.core.config.plugins.Plugin;
 
-//@Plugin(name = "simple", category = ConfigurationFactory.CATEGORY)
 @Plugin(name = "custom", category = ConfigurationFactory.CATEGORY)
 @Order(50)
 public class CustomConfigurationFactory extends ConfigurationFactory {
@@ -71,58 +70,6 @@ public class CustomConfigurationFactory extends ConfigurationFactory {
         return builder.build();
 
     }
-
-
-//    static Configuration createConfiguration(final String name, ConfigurationBuilder<BuiltConfiguration> builder) {
-//        AppenderComponentBuilder console = builder.newAppender("Stdout", "CONSOLE")
-//                .addAttribute("target", ConsoleAppender.Target.SYSTEM_OUT);
-////        console.add(builder.newLayout("PatternLayout").addAttribute("pattern", "%d [%t] %-5level: %msg%n%throwable"));
-//
-//        console.add(builder.newLayout("PatternLayout")
-//                .addAttribute("pattern", "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %l - %m%n"));
-//
-//
-//        LayoutComponentBuilder layout = builder.newLayout("PatternLayout")
-//                .addAttribute("pattern", "%d [%t] %-5level: %msg%n%throwable");
-//        console.add(layout);
-//
-////        FilterComponentBuilder filter = builder.newFilter("MarkerFilter", Filter.Result.ACCEPT, Filter.Result.DENY);
-////        filter.addAttribute("marker", "FLOW");
-////        console.add(filter);
-////        builder.add(console);
-//
-//        ComponentBuilder triggeringPolicies = builder.newComponent("Policies")
-//                .addComponent(builder.newComponent("CronTriggeringPolicy")
-//                        .addAttribute("schedule", "0 0 0 * * ?"))
-//                .addComponent(builder.newComponent("SizeBasedTriggeringPolicy")
-//                        .addAttribute("size", "100M"));
-//        AppenderComponentBuilder rollingFile = builder.newAppender("rolling", "RollingFile");
-//        rollingFile.addAttribute("fileName", "target/rolling2.log");
-//        rollingFile.addAttribute("filePattern", "target/archive/rolling-%d{MM-dd-yy}.log.gz");
-//        rollingFile.add(layout);
-//        rollingFile.addComponent(triggeringPolicies);
-//        builder.add(rollingFile);
-//
-//
-//        builder.add(console);
-//        builder.add(builder.newLogger("com", Level.DEBUG)
-//                .add(builder.newAppenderRef("Stdout"))
-//                .addAttribute("additivity", false));
-//        builder.add(builder.newRootLogger(Level.ERROR)
-//                .add(builder.newAppenderRef("Stdout")));
-//        Configurator.initialize(builder.build());
-//
-//        try {
-//            builder.writeXmlConfiguration(System.out);
-//        } catch (IOException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//        return builder.build();
-//
-//    }
-
-
 
     @Override
     public Configuration getConfiguration(LoggerContext loggerContext, ConfigurationSource source) {

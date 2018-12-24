@@ -1,7 +1,3 @@
-/**
-  This class invokes the configuration factory through the run time property,
-  as defined in section 4.2 of the "Programmatic Configuration with Log4j 2"
-**/
 package com.dev.logging.log4j2.simpleconfiguration;
 
 import com.dev.logging.log4j2.Log4j2BaseIntegrationTest;
@@ -13,22 +9,23 @@ import org.apache.logging.log4j.core.config.plugins.util.PluginManager;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class SimpleConfigurationIntegrationTest extends Log4j2BaseIntegrationTest {
+public class TestClass  extends Log4j2BaseIntegrationTest {
+
+    Logger logger = LogManager.getLogger(this.getClass());
+
     @BeforeClass
     public static void setUp() {
         PluginManager.addPackage("com.dev.logging.log4j2.simpleconfiguration");
     }
 
     @Test
-    public void givenSimpleConfigurationPlugin_whenUsingFlowMarkers_thenLogsCorrectly() throws Exception {
-        Logger logger = LogManager.getLogger(this.getClass());
-
-        LogPrinter lp = new LogPrinter();
-        lp.printlog();
-
+    public void test1(){
         Marker markerContent = MarkerManager.getMarker("FLOW");
         logger.debug(markerContent, "Debug log message");
         logger.info(markerContent, "Info log message");
         logger.error(markerContent, "Error log message");
+
+
     }
+
 }

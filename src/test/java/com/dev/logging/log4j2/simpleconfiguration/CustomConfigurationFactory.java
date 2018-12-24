@@ -27,7 +27,7 @@ public class CustomConfigurationFactory extends ConfigurationFactory {
 //            .addAttribute("pattern", "%d [%t] %-5level: %msg%n%throwable");
 
         LayoutComponentBuilder layout = builder.newLayout("PatternLayout")
-                .addAttribute("pattern", "%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %l - %m%n");
+                .addAttribute("pattern", "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p %l - %m%n%throwable");
 
         console.add(layout);
         FilterComponentBuilder filter = builder.newFilter("MarkerFilter", Filter.Result.ACCEPT, Filter.Result.DENY);

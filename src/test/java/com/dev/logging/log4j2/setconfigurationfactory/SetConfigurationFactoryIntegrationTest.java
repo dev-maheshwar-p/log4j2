@@ -18,18 +18,18 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SetConfigurationFactoryIntegrationTest extends Log4j2BaseIntegrationTest {
-    @BeforeClass
-    public static void setUp() {
-        CustomConfigurationFactory customConfigurationFactory = new CustomConfigurationFactory();
-        ConfigurationFactory.setConfigurationFactory(customConfigurationFactory);
-    }
-
-    @Test
-    public void givenDirectConfiguration_whenUsingFlowMarkers_ThenLogsCorrectly() {
-        Logger logger = LogManager.getLogger(this.getClass());
-        Marker markerContent = MarkerManager.getMarker("FLOW");
-        logger.debug(markerContent, "Debug log message");
-        logger.info(markerContent, "Info log message");
-        logger.error(markerContent, "Error log message");
-    }
+//    @BeforeClass
+//    public static void setUp() {
+//        CustomConfigurationFactory customConfigurationFactory = new CustomConfigurationFactory();
+//        ConfigurationFactory.setConfigurationFactory(customConfigurationFactory);
+//    }
+//
+//    @Test
+//    public void givenDirectConfiguration_whenUsingFlowMarkers_ThenLogsCorrectly() {
+//        Logger logger = LogManager.getLogger(this.getClass());
+//        Marker markerContent = MarkerManager.getMarker("FLOW");
+//        logger.debug(markerContent, "Debug log message");
+//        logger.info(markerContent, "Info log message");
+//        logger.error(markerContent, "Error log message");
+//    }
 }

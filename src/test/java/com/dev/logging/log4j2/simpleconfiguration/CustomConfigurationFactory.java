@@ -16,7 +16,8 @@ import org.apache.logging.log4j.core.config.builder.api.*;
 import org.apache.logging.log4j.core.config.builder.impl.BuiltConfiguration;
 import org.apache.logging.log4j.core.config.plugins.Plugin;
 
-@Plugin(name = "simple", category = ConfigurationFactory.CATEGORY)
+//@Plugin(name = "simple", category = ConfigurationFactory.CATEGORY)
+@Plugin(name = "custom", category = ConfigurationFactory.CATEGORY)
 @Order(50)
 public class CustomConfigurationFactory extends ConfigurationFactory {
 

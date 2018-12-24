@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>log4j2</artifactId>
 
-    <parent>
-        <groupId>com.baeldung</groupId>
-        <artifactId>parent-modules</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../../</relativePath>
-    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.walmart</groupId>
+    <artifactId>log4j2</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>log4j2</name>
+    <description>Demo project for Log4J2</description>
 
     <dependencies>
         <!-- This is the needed core component. -->
@@ -18,7 +17,21 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j-core.version}</version>
         </dependency>
-        
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- This is the needed API component. -->
         <dependency>
           <groupId>org.apache.logging.log4j</groupId>
@@ -69,7 +82,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <proc>none</proc>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -114,6 +128,9 @@
     </profiles>
 
     <properties>
+        <junit.version>4.12</junit.version>
+        <junit.jupiter.version>5.0.2</junit.jupiter.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <jackson.version>2.9.5</jackson.version>
         <h2.version>1.4.193</h2.version>
         <commons-dbcp2.version>2.1.1</commons-dbcp2.version>
